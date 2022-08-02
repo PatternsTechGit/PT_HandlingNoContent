@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <app-toolbar></app-toolbar>
+</div>
+
+<div class="row">
+   <div class="col-12 col-sm-6">
+      <div class="card card-user">
+          <div class="card-body">
+              <div class="author">
+                  <div class="block block-one"></div>
+                  <div class="block block-two"></div>
+                  <div class="block block-three"></div>
+                  <div class="block block-four"></div>
+                  
+                  <img alt="..." class=" avatar" src="{{toAccount?.userImageUrl}}" />
+                  <h5 class="title" >{{toAccount?.accountTitle}}</h5>
+                  <p class="account-number">{{toAccount?.accountNumber}}</p>
+                  <p class="balance">Balance: <b>$ {{toAccount.currentBalance}}</b> <span *ngIf="toAccount?.accountStatus === 'Active'" class="account-status active">Active</span><span *ngIf="toAccount?.accountStatus === 'InActive'" class="account-status inactive">Inactive</span></p>
+                  <div class="amount-cont">
+                      <div class="form-row">
+                          <div class="col-sm-2"></div>
+                          <div class="col-sm-8 my-1">
+                              <input type="text" [(ngModel)]="toAccount.accountNumber" style="margin-left: 50%; width: 240px;" class="form-control" id="depositAccountNumber" placeholder="Account number" (focusout)="getToAccount()" >
+                          </div>
+                        
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+
