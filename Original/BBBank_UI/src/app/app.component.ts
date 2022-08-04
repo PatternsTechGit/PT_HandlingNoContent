@@ -13,9 +13,11 @@ export class AppComponent implements OnInit {
   title = 'BBBankUI';
   lineGraphData: LineGraphData;
   toAccount: AccountByX;
+  message:string
   constructor(private transactionService: TransactionService,private accountsService: AccountsService) { }
 
   ngOnInit(): void {
+   
     this.initializeTo();
     this.transactionService
       .getLast12MonthBalances('')
@@ -36,14 +38,20 @@ export class AppComponent implements OnInit {
         next: (data) => {
           if (data.statusCode == 204) {
             this.initializeTo();
+            this.message = String(data.result);
           }
           else {
             this.toAccount = data.result
           }
         },
         error: (error) => {
+          this.message = String(error);
         },
       });
+  }
+
+  clearMessage(){
+    this.message='';
   }
 
   initializeTo() {
