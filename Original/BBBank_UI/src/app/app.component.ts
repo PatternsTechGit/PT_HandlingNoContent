@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LineGraphData } from './models/line-graph-data'
-import { TransactionService } from './services/transaction.service';
 import {AccountByX} from './models/account-by-x';
 import AccountsService from './services/accounts.service';
 @Component({
@@ -14,21 +13,10 @@ export class AppComponent implements OnInit {
   lineGraphData: LineGraphData;
   toAccount: AccountByX;
   message:string
-  constructor(private transactionService: TransactionService,private accountsService: AccountsService) { }
+  constructor(private accountsService: AccountsService) { }
 
   ngOnInit(): void {
-   
     this.initializeTo();
-    this.transactionService
-      .getLast12MonthBalances('')
-      .subscribe({
-        next: (data) => {
-          this.lineGraphData = data.result;
-        },
-        error: (error) => {
-          console.log(error.responseException.exceptionMessage);
-        },
-      });
   }
 
   getToAccount() {
