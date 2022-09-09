@@ -204,7 +204,14 @@ import { ApiResponse } from "./api-Response";
 ```
 
 ## Step 2: Setup Account Service
-Create a new file `accounts.service.ts` in **services** folder which will contain the `getAccountByAccountNumber` method which will call the API method to get account information by accountNumber as below :
+
+Create a new service `accounts.service.ts` using cli command in **services** folder
+
+```ts
+ng g service accounts
+```
+
+which will contain the `getAccountByAccountNumber` method which will call the API method to get account information by accountNumber as below :
 
 ```ts
 export default class AccountsService {
@@ -220,6 +227,7 @@ export default class AccountsService {
 Go to `app.module.ts` file and add **FormsModule** reference in imports as below : 
 
 ```ts
+import { FormsModule } from '@angular/forms';
 imports: [
     BrowserModule,
     AppRoutingModule,
