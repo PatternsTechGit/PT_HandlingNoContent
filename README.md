@@ -290,7 +290,7 @@ Go to `app.component.html` and add Image control that is bind to the users profi
 ```
 
 
-## Step 4: Getting Existing Account 
+## Step 5: Getting Existing Account 
 
 Go to `app.component.ts` and create `getToAccount` function which will be called on **focusout** event of input field. This method will call the 
  `getAccountByAccountNumber` method of `AccountsService`.
@@ -543,11 +543,11 @@ Go to `app.component.css` and add the following **css** for styling.
 ```
 
 ------
-### Final Output:
+## Final Output:
 
-Now run the application and see its working as below :  
+Now run both applications and see its working as below :  
 
-![NoContent](https://user-images.githubusercontent.com/100709775/182832367-5a050247-56c8-4199-afb4-2466beb4dc6b.gif)
+>![NoContent](https://user-images.githubusercontent.com/100709775/182832367-5a050247-56c8-4199-afb4-2466beb4dc6b.gif)
 
 
 
